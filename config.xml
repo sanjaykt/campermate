@@ -96,7 +96,8 @@
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
     <plugin name="cordova-plugin-wkwebview-engine" spec="https://github.com/driftyco/cordova-plugin-wkwebview-engine.git" />
-<!-- following code added from the Inoc 3 book -->
+
+<!-- following code added from the Ionic 3 book -->
 <allow-navigation href="http://localhost:8080/*"/>
 <feature name="CDVWKWebViewEngine">
 <param name="ios-package" value="CDVWKWebViewEngine" />
