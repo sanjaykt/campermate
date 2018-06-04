@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CampDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {DataProvider} from "../../providers/data/data";
 
 @IonicPage()
 @Component({
@@ -15,11 +10,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CampDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  campDetailsForm: FormGroup;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              public dataService: DataProvider) {
+
+    this.campDetailsForm = this.formBuilder.group({
+      gateAccessCode: [''],
+      ammenitiesCode: [''],
+      wifiPassword: [''],
+      phoneNumber: [''],
+      departure: [''],
+      notes: ['']
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CampDetailsPage');
+  }
+
+
+  saveForm(): void {
+    let data = this.campDetailsForm.value;
+    //this.dataService.setCampDetails(data);
   }
 
 }

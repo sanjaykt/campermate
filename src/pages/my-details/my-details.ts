@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MyDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {DataProvider} from "../../providers/data/data";
 
 @IonicPage()
 @Component({
@@ -15,11 +10,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MyDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  myDetailsForm: FormGroup;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              public dataService: DataProvider) {
+
+    this.myDetailsForm = this.formBuilder.group({
+      carRegistration: [''],
+      trailerRegistration: [''],
+      trailerDimensions: [''],
+      phoneNumber: [''],
+      notes: ['']
+    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyDetailsPage');
+  }
+
+  saveForm(): void {
+    let data = this.myDetailsForm.value;
+    //this.dataService.setMyDetails(data);
   }
 
 }

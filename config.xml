@@ -82,7 +82,6 @@
     <engine name="ios" spec="~4.5.4" />
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
-    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
     <plugin name="cordova-sqlite-storage" spec="^2.3.2" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
@@ -96,12 +95,10 @@
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
     <plugin name="cordova-plugin-wkwebview-engine" spec="https://github.com/driftyco/cordova-plugin-wkwebview-engine.git" />
-
-<!-- following code added from the Ionic 3 book -->
-<allow-navigation href="http://localhost:8080/*"/>
-<feature name="CDVWKWebViewEngine">
-<param name="ios-package" value="CDVWKWebViewEngine" />
-</feature>
-<preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-
+    <allow-navigation href="http://localhost:8080/*" />
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
 </widget>

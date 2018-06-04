@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { DataProvider } from '../providers/data/data';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { ConnectivityProvider } from '../providers/connectivity/connectivity';
+import { Geolocation  } from "@ionic-native/geolocation";
+import {Network} from "@ionic-native/network";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     GoogleMapsProvider,
-    ConnectivityProvider
+    ConnectivityProvider,
+    Geolocation,
+    Network
   ]
 })
 export class AppModule {}

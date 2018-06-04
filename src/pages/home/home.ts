@@ -12,4 +12,7 @@ export class HomePage {
 
   }
 
+  tab1Root: any = 'LocationPage';
+  tab2Root: any = 'MyDetailsPage';
+  tab3Root: any = 'CampDetailsPage';
 }
